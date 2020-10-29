@@ -1,0 +1,27 @@
+/* footer social icons */
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+  
+    padding: 0;
+  }
+  
+  ul.social-network li {
+    display: inline;
+    margin: 0;
+    padding: 5px;
+  }
+  
+  .faGitHub, .faLinkedin, .faEmail{
+      color: white;
+  }
+  
+  .faGitHub:hover{
+    color: #3b5998;
+  }
+  
+  .faLinkedin:hover{
+  color: #0072b1;
+  }
+  
