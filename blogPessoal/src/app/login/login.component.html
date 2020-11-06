@@ -1,8 +1,7 @@
 <div class="container mb-5">
     <body>
         <div id="login">
-            <h3 class="text-center text-white pt-5">Login</h3>
-            <div class="container">
+            <div class="container mt-5">
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
@@ -10,15 +9,15 @@
                                 <h3 class="text-center text-info">Login</h3>
                                 <div class="form-group">
                                     <label for="nome" class="text-info">Nome:</label><br>
-                                    <input type="text" name="nome" id="nome" class="form-control">
+                                    <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]='userLogin'>
                                 </div>
                                 <div class="form-group">
                                     <label for="senha" class="text-info">Senha:</label><br>
-                                    <input type="text" name="senha" id="senha" class="form-control">
+                                    <input type="text" name="senha" id="senha" class="form-control" [(ngModel)]='userLogin.senha'>
                                 </div>
                                 <div class="form-group">
                                     <label for="lembre-me" class="text-info"><span>Lembre-me</span> <span><input id="lembre-me" name="lembre-me" type="checkbox"></span></label><br>
-                                    <input type="entrar" name="entrar" class="btn btn-info btn-md" value="entrar">
+                                    <input type="entrar" name="entrar" class="btn btn-info btn-md" (click)='entrar()' value="Entrar">
                                 </div>
                                 <div id="register-link" class="text-right">
                                     <a href="/cadastro" class="text-info">Quero me cadastrar</a>
