@@ -13,14 +13,14 @@
           routerLink="/feed">Feed</a>
         </li>
 
-        <div *ngIf='auth.btnLogin()'>
+        <div *ngIf='!auth.btnLogin()'>
           <li class="nav-item">
             <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
             routerLink="/login">Login</a>
           </li>
         </div>
 
-        <div *ngIf='auth.btnLogin()'>
+        <div *ngIf='!auth.btnLogin()'>
           <li class="nav-item">
             <a class="nav-link texto text-monospace text-uppercase font-weight-bold p-3" 
             routerLink="/cadastro">Cadastro</a>
@@ -33,7 +33,6 @@
             (click)='sair()'>Sair</a>
           </li>
         </div>
-
       </ul>
     </div>
   </nav>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
 
@@ -11,7 +12,8 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   logar(userLogin: UserLogin){
-    return this.http.post('http://localhost:8080/usuarios/logar', UserLogin)
+    return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
+    
   }
 
   cadastrar(user:User){
@@ -22,7 +24,7 @@ export class AuthService {
     let ok = false
     let token = localStorage.getItem('token')
 
-    if( token != null){
+    if( token == null){
       ok = true
     }
     
@@ -33,9 +35,10 @@ export class AuthService {
     let ok = false
     let token = localStorage.getItem('token')
 
-    if ( token == null){
+    if (token == ''){
       ok = true
     }
-
+    
+      return ok
   }
 }

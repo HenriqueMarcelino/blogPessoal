@@ -1,3 +1,4 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
@@ -27,11 +28,10 @@ export class CadastroComponent implements OnInit {
 
   cadastrar(){
     if( this.senha === this.user.senha ){
-
-      this.authService.cadastrar(this.user).subscribe((resp: User) =>{
+      this.authService.cadastrar(this.user).subscribe((resp: User)=>{
         this.user = resp
         this.router.navigate(['/login'])
-        alert ('Usuario cadastrado com sucesso!')
+        alert('Usuario cadastrado com sucesso!')
       })
     } else{
       alert('Suas senhas não conferem')
